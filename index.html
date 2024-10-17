@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        .mainbox {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #range {
+            width: 300px;
+            margin-top: 24px;
+            appearance: none;
+            background: #667;
+            height: 4px;
+            border-radius: 15px;
+        }
+
+        #range::-webkit-slider-thumb {
+            /* 原生的中间的小球，去掉后才可以加其他css属性 */
+            appearance: none;
+            /* 下面为新的中间小球 */
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        .controlBox {
+            position: relative;
+            width: 500px;
+            height: 30px;
+            top: 0px;
+            display: flex;
+        }
+
+        .controlBox div {
+            position: relative;
+            cursor: pointer;
+            top: 5px;
+            left: 10px;
+            font-size: 15px;
+        }
+
+        #range {
+            position: relative;
+            left: 20px;
+            top: -10px;
+            appearance: none;
+            width: 340px;
+            height: 5px;
+            background-color: #ccc;
+
+        }
+
+        #range::-webkit-slider-thumb {
+            /* 原生的中间的小球，去掉后才可以加其他css属性 */
+            appearance: none;
+            /* 下面为新的中间小球 */
+            width: 10px;
+            height: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="mainbox">
+        <div style="overflow: hidden; height: 450px;">
+            <audio src="./1387088902.mp3"></audio>
+            <ul class="lrc">
+
+            </ul>
+        </div>
+        <div class="controlBox">
+            <div id="playButton">播放</div>
+            <input id="range" type="range">
+            <div style="margin-left: 17px;">
+                <span id="current-time">00:00</span> / <span id="duration">00:00</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="./data.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
